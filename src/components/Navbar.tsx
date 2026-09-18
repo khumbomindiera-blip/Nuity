@@ -1,20 +1,21 @@
 import React from 'react';
-import { 
-  Sparkles, 
-  PlusCircle, 
-  FileText, 
-  ShieldCheck, 
-  Activity, 
-  Radio, 
-  Layers, 
-  Network, 
+import {
+  PlusCircle,
+  ShieldCheck,
+  Activity,
+  Radio,
+  Layers,
+  Network,
   Bot,
-  Compass
+  Compass,
+  Home
 } from 'lucide-react';
 
 interface NavbarProps {
-  activeTab: 'vault' | 'podmind' | 'pods' | 'synergies' | 'audit' | 'extract';
-  setActiveTab: (tab: 'vault' | 'podmind' | 'pods' | 'synergies' | 'audit' | 'extract') => void;
+  activeTab: 'feed' | 'vault' | 'podmind' | 'pods' | 'synergies' | 'audit' | 'extract';
+  setActiveTab: (
+    tab: 'feed' | 'vault' | 'podmind' | 'pods' | 'synergies' | 'audit' | 'extract'
+  ) => void;
   onOpenCreate: () => void;
   onOpenImport: () => void;
   continuityScore: number;
@@ -29,11 +30,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-stone-800 bg-stone-950/80 backdrop-blur-md">
-      {/* Top Banner / Brand Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 gap-4">
-          
-          {/* Brand & Tagline */}
+
+          {/* Brand */}
           <div className="flex items-center gap-3">
             <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 text-stone-950 font-black shadow-lg shadow-emerald-950/40">
               <span className="text-xl tracking-tighter">Nu</span>
@@ -41,23 +41,40 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               </div>
             </div>
+
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
+                <h1 className="text-lg font-bold tracking-tight text-white">
                   Nuity
                 </h1>
+
                 <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   UniPods Platform
                 </span>
               </div>
+
               <p className="text-xs text-stone-400 font-medium tracking-wide">
                 Continuity for UniPods Communities
               </p>
             </div>
           </div>
 
-          {/* Center Navigation Tabs */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1 bg-stone-900/90 p-1 rounded-xl border border-stone-800">
+
+            <button
+              id="nav-tab-feed"
+              onClick={() => setActiveTab('feed')}
+              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                activeTab === 'feed'
+                  ? 'bg-emerald-500 text-stone-950 shadow-sm shadow-emerald-500/30'
+                  : 'text-stone-400 hover:text-stone-200 hover:bg-stone-800/60'
+              }`}
+            >
+              <Home className="w-3.5 h-3.5" />
+              Community Feed
+            </button>
+
             <button
               id="nav-tab-vault"
               onClick={() => setActiveTab('vault')}
@@ -74,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               id="nav-tab-podmind"
               onClick={() => setActiveTab('podmind')}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all relative ${
+              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                 activeTab === 'podmind'
                   ? 'bg-emerald-500 text-stone-950 shadow-sm shadow-emerald-500/30'
                   : 'text-emerald-400 hover:text-emerald-300 hover:bg-emerald-950/30'
@@ -82,10 +99,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               <Bot className="w-3.5 h-3.5" />
               PodMind AI
-              <span className="flex h-1.5 w-1.5 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
-              </span>
             </button>
 
             <button
@@ -128,80 +141,97 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </nav>
 
-          {/* Right Action Items & Health Gauge */}
+          {/* Right Side */}
           <div className="flex items-center gap-2.5">
-            {/* Continuity Resilience Indicator */}
             <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-stone-900 border border-stone-800/80">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <div className="text-left">
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-stone-400">Institutional Memory</span>
-                  <span className="text-xs font-bold text-emerald-400">{continuityScore}%</span>
-                </div>
-              </div>
+              <span className="text-xs font-bold text-emerald-400">
+                {continuityScore}%
+              </span>
             </div>
 
-            {/* Quick Capture Buttons */}
             <button
-              id="btn-import-chat"
               onClick={onOpenImport}
               className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-stone-900 hover:bg-stone-800 text-stone-300 border border-stone-700 transition"
-              title="Import WhatsApp, Meeting, or Lab Notes into Nuity"
             >
               <Radio className="w-3.5 h-3.5 text-amber-400" />
-              Import Chat/Transcript
+              Import Chat
             </button>
 
             <button
-              id="btn-log-artifact"
               onClick={onOpenCreate}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-500 hover:bg-emerald-400 text-stone-950 shadow-sm shadow-emerald-500/30 transition transform active:scale-95"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-500 hover:bg-emerald-400 text-stone-950"
             >
               <PlusCircle className="w-3.5 h-3.5" />
-              <span>Log Artifact</span>
+              Log Artifact
             </button>
           </div>
-
         </div>
 
-        {/* Mobile Sub-Navigation */}
+        {/* Mobile Navigation */}
         <div className="flex md:hidden items-center justify-between py-2 border-t border-stone-850 overflow-x-auto gap-1">
+
+          <button
+            onClick={() => setActiveTab('feed')}
+            className={`px-3 py-1 text-xs font-semibold rounded-md whitespace-nowrap ${
+              activeTab === 'feed'
+                ? 'bg-emerald-500 text-stone-950'
+                : 'text-stone-400'
+            }`}
+          >
+            Feed
+          </button>
+
           <button
             onClick={() => setActiveTab('vault')}
             className={`px-3 py-1 text-xs font-semibold rounded-md whitespace-nowrap ${
-              activeTab === 'vault' ? 'bg-emerald-500 text-stone-950' : 'text-stone-400'
+              activeTab === 'vault'
+                ? 'bg-emerald-500 text-stone-950'
+                : 'text-stone-400'
             }`}
           >
             Vault
           </button>
+
           <button
             onClick={() => setActiveTab('podmind')}
             className={`px-3 py-1 text-xs font-semibold rounded-md whitespace-nowrap ${
-              activeTab === 'podmind' ? 'bg-emerald-500 text-stone-950' : 'text-emerald-400'
+              activeTab === 'podmind'
+                ? 'bg-emerald-500 text-stone-950'
+                : 'text-stone-400'
             }`}
           >
-            PodMind AI
+            AI
           </button>
+
           <button
             onClick={() => setActiveTab('pods')}
             className={`px-3 py-1 text-xs font-semibold rounded-md whitespace-nowrap ${
-              activeTab === 'pods' ? 'bg-emerald-500 text-stone-950' : 'text-stone-400'
+              activeTab === 'pods'
+                ? 'bg-emerald-500 text-stone-950'
+                : 'text-stone-400'
             }`}
           >
             Pods
           </button>
+
           <button
             onClick={() => setActiveTab('synergies')}
             className={`px-3 py-1 text-xs font-semibold rounded-md whitespace-nowrap ${
-              activeTab === 'synergies' ? 'bg-emerald-500 text-stone-950' : 'text-stone-400'
+              activeTab === 'synergies'
+                ? 'bg-emerald-500 text-stone-950'
+                : 'text-stone-400'
             }`}
           >
             Synergies
           </button>
+
           <button
             onClick={() => setActiveTab('audit')}
             className={`px-3 py-1 text-xs font-semibold rounded-md whitespace-nowrap ${
-              activeTab === 'audit' ? 'bg-emerald-500 text-stone-950' : 'text-stone-400'
+              activeTab === 'audit'
+                ? 'bg-emerald-500 text-stone-950'
+                : 'text-stone-400'
             }`}
           >
             Audit
