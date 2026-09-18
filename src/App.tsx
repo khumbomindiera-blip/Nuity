@@ -7,7 +7,6 @@ import {
 } from './types';
 import { INITIAL_PODS, INITIAL_SYNERGIES } from './data/mockPods';
 import { CommunityFeed } from './components/CommunityFeed';
-import { CommunityFeed } from './components/CommunityFeed';
 import { INITIAL_ARTIFACTS } from './data/mockArtifacts';
 import { Navbar } from './components/Navbar';
 import { ArtifactCard } from './components/ArtifactCard';
