@@ -1,0 +1,6 @@
+{
+  "name": "Nuity",
+  "description": "Continuity for UniPods Communities - Knowledge continuity and collective intelligence platform with PodMind AI assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
