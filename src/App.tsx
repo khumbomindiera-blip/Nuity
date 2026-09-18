@@ -6,6 +6,7 @@ import {
   SynergyConnection 
 } from './types';
 import { INITIAL_PODS, INITIAL_SYNERGIES } from './data/mockPods';
+import { CommunityFeed } from './components/CommunityFeed';
 import { INITIAL_ARTIFACTS } from './data/mockArtifacts';
 import { Navbar } from './components/Navbar';
 import { ArtifactCard } from './components/ArtifactCard';
@@ -37,7 +38,9 @@ const SYNERGY_STORAGE_KEY = 'nuity_synergies_v1';
 
 export default function App() {
   // Navigation tab
-  const [activeTab, setActiveTab] = useState<'vault' | 'podmind' | 'pods' | 'synergies' | 'audit' | 'extract'>('vault');
+ const [activeTab, setActiveTab] = useState<
+  'feed' | 'vault' | 'podmind' | 'pods' | 'synergies' | 'audit' | 'extract'
+>('feed');
 
   // Artifacts state with local storage fallback
   const [artifacts, setArtifacts] = useState<ContinuityArtifact[]>(() => {
