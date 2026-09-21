@@ -6,6 +6,8 @@ import {
   SynergyConnection 
 } from './types';
 import { INITIAL_PODS, INITIAL_SYNERGIES } from './data/mockPods';
+import { EventsPage } from './components/EventsPage';
+import { AlertsPage } from './components/AlertsPage';
 import { CommunityFeed } from './components/CommunityFeed';
 import { INITIAL_ARTIFACTS } from './data/mockArtifacts';
 import { Navbar } from './components/Navbar';
@@ -39,7 +41,7 @@ const SYNERGY_STORAGE_KEY = 'nuity_synergies_v1';
 export default function App() {
   // Navigation tab
  const [activeTab, setActiveTab] = useState<
-  'feed' | 'vault' | 'podmind' | 'pods' | 'synergies' | 'audit' | 'extract'
+'feed' | 'events' | 'alerts' | 'vault' | 'podmind' | 'pods' | 'synergies' | 'audit'
 >('feed');
 
   // Artifacts state with local storage fallback
@@ -237,6 +239,14 @@ export default function App() {
     onAskPodMind={() => setActiveTab('podmind')}
   />
 )}
+        {activeTab === 'events' && (
+  <EventsPage />
+)}
+
+{activeTab === 'alerts' && (
+  <AlertsPage />
+)}
+        
         {activeTab === 'vault' && (
           <div className="space-y-6 text-left">
             
