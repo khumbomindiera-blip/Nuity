@@ -8,34 +8,86 @@ export function CommunityFeed({
   return (
     <div className="space-y-6">
 
-      {/* Daily Brief */}
+      {/* What You Missed */}
       <div className="p-6 rounded-2xl bg-gradient-to-r from-blue-900/40 to-indigo-900/30 border border-blue-800">
         <div className="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold mb-3">
-          Your Daily Brief
+          WHAT YOU MISSED
         </div>
 
-        <h1 className="text-3xl font-black mb-2 text-white">
-          Three things before you start
+        <h1 className="text-3xl font-black mb-4 text-white">
+          Three things since Monday
         </h1>
 
-        <ul className="space-y-2 text-stone-300">
-          <li>• New Teams transcript uploaded</li>
-          <li>• Grant milestone due this week</li>
-          <li>• Two new continuity records added</li>
+        <ul className="space-y-2 text-stone-300 mb-5">
+          <li>🔔 Team declaration deadline closes today</li>
+          <li>🏆 Hackathon judging criteria released</li>
+          <li>🚀 Agritech accelerator applications now open</li>
         </ul>
+
+        <div className="flex gap-3">
+          <button className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold">
+            Listen (2 min)
+          </button>
+
+          <button className="px-4 py-2 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-200 text-sm font-semibold">
+            View Sources
+          </button>
+        </div>
       </div>
 
       <div className="grid lg:grid-cols-3 gap-6">
 
         {/* Main Feed */}
-        <div className="lg:col-span-2 space-y-4">
+        <div className="lg:col-span-2 space-y-5">
+
+          {/* Composer */}
+          <div className="p-5 rounded-xl bg-stone-900 border border-stone-800">
+            <h3 className="font-bold text-white mb-3">
+              Share with your UniPod community
+            </h3>
+
+            <input
+              type="text"
+              placeholder="What's happening in your UniPod?"
+              className="w-full bg-stone-950 border border-stone-700 rounded-lg px-4 py-3 text-sm text-white placeholder:text-stone-500"
+            />
+
+            <div className="flex justify-end mt-3">
+              <button className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold">
+                Post Update
+              </button>
+            </div>
+          </div>
+
+          {/* Categories */}
+          <div className="flex flex-wrap gap-2">
+            <button className="px-3 py-1 rounded-full bg-blue-600 text-white text-sm font-semibold">
+              All
+            </button>
+
+            <button className="px-3 py-1 rounded-full bg-stone-800 text-stone-300 text-sm">
+              Announcements
+            </button>
+
+            <button className="px-3 py-1 rounded-full bg-stone-800 text-stone-300 text-sm">
+              Opportunities
+            </button>
+
+            <button className="px-3 py-1 rounded-full bg-stone-800 text-stone-300 text-sm">
+              Events
+            </button>
+
+            <button className="px-3 py-1 rounded-full bg-stone-800 text-stone-300 text-sm">
+              Discussions
+            </button>
+          </div>
 
           <h2 className="text-xl font-bold text-white">
-            What's Happening
+            Community Feed
           </h2>
 
           {/* Post 1 */}
-          <div className="p-5 rounded-xl bg-stone-900 border border-stone-800">
+          <div className="p-5 rounded-xl bg-stone-900 border border-stone-800 hover:border-blue-700 transition">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center font-bold">
                 AB
@@ -57,8 +109,8 @@ export function CommunityFeed({
             </h4>
 
             <p className="text-sm text-stone-400">
-              Four criteria carry equal weight:
-              functionality, accuracy, usability and maintainability.
+              Four criteria carry equal weight: functionality,
+              accuracy, usability and maintainability.
             </p>
 
             <div className="flex gap-6 mt-4 text-sm text-stone-500">
@@ -68,7 +120,7 @@ export function CommunityFeed({
           </div>
 
           {/* Post 2 */}
-          <div className="p-5 rounded-xl bg-stone-900 border border-stone-800">
+          <div className="p-5 rounded-xl bg-stone-900 border border-stone-800 hover:border-blue-700 transition">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center font-bold">
                 MD
@@ -101,7 +153,7 @@ export function CommunityFeed({
           </div>
 
           {/* Post 3 */}
-          <div className="p-5 rounded-xl bg-stone-900 border border-stone-800">
+          <div className="p-5 rounded-xl bg-stone-900 border border-stone-800 hover:border-blue-700 transition">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center font-bold">
                 GN
@@ -134,7 +186,7 @@ export function CommunityFeed({
 
         </div>
 
-        {/* Right Sidebar */}
+        {/* Sidebar */}
         <div className="space-y-4">
 
           <div className="p-5 rounded-xl bg-stone-900 border border-stone-800">
@@ -142,7 +194,8 @@ export function CommunityFeed({
               Upcoming Events
             </h3>
 
-            <div className="space-y-3 text-sm">
+            <div className="space-y-4">
+
               <div>
                 <p className="font-semibold text-blue-400">
                   22 Sep
@@ -169,6 +222,7 @@ export function CommunityFeed({
                   Agritech Accelerator Deadline
                 </p>
               </div>
+
             </div>
           </div>
 
@@ -178,14 +232,20 @@ export function CommunityFeed({
             </h3>
 
             <p className="text-sm text-stone-400 mb-4">
-              Answers from chats, calls, transcripts and documents.
+              Search across chats, meetings, transcripts and institutional memory.
             </p>
+
+            <input
+              type="text"
+              placeholder="What did I miss this week?"
+              className="w-full bg-stone-950 border border-stone-700 rounded-lg px-3 py-2 text-sm text-white placeholder:text-stone-500 mb-3"
+            />
 
             <button
               onClick={onAskPodMind}
               className="w-full px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold"
             >
-              Open PodMind
+              Ask PodMind
             </button>
           </div>
 
