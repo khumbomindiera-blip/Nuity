@@ -40,7 +40,7 @@ export function CommunityFeed({
         {/* Main Feed */}
         <div className="lg:col-span-2 space-y-5">
 
-          {/* Composer */}
+          {/* Post Composer */}
           <div className="p-5 rounded-xl bg-stone-900 border border-stone-800">
             <h3 className="font-bold text-white mb-3">
               Share with your UniPod community
@@ -83,13 +83,13 @@ export function CommunityFeed({
           </div>
 
           <h2 className="text-xl font-bold text-white">
-            Community Feed
+            Latest Discussions
           </h2>
 
           {/* Post 1 */}
           <div className="p-5 rounded-xl bg-stone-900 border border-stone-800 hover:border-blue-700 transition">
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center font-bold">
+              <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white">
                 AB
               </div>
 
@@ -113,16 +113,25 @@ export function CommunityFeed({
               accuracy, usability and maintainability.
             </p>
 
-            <div className="flex gap-6 mt-4 text-sm text-stone-500">
-              <span>❤️ 18 Likes</span>
-              <span>💬 9 Comments</span>
+            <div className="flex items-center justify-between mt-4 pt-4 border-t border-stone-800">
+              <button className="text-sm text-stone-400 hover:text-blue-400 transition">
+                ❤️ Like
+              </button>
+
+              <button className="text-sm text-stone-400 hover:text-blue-400 transition">
+                💬 Comment
+              </button>
+
+              <button className="text-sm text-stone-400 hover:text-blue-400 transition">
+                🔗 Share
+              </button>
             </div>
           </div>
 
           {/* Post 2 */}
           <div className="p-5 rounded-xl bg-stone-900 border border-stone-800 hover:border-blue-700 transition">
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center font-bold">
+              <div className="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center font-bold text-white">
                 MD
               </div>
 
@@ -146,16 +155,25 @@ export function CommunityFeed({
               and offline-first PWA development.
             </p>
 
-            <div className="flex gap-6 mt-4 text-sm text-stone-500">
-              <span>❤️ 7 Likes</span>
-              <span>💬 12 Comments</span>
+            <div className="flex items-center justify-between mt-4 pt-4 border-t border-stone-800">
+              <button className="text-sm text-stone-400 hover:text-blue-400 transition">
+                ❤️ Like
+              </button>
+
+              <button className="text-sm text-stone-400 hover:text-blue-400 transition">
+                💬 Comment
+              </button>
+
+              <button className="text-sm text-stone-400 hover:text-blue-400 transition">
+                🔗 Share
+              </button>
             </div>
           </div>
 
           {/* Post 3 */}
           <div className="p-5 rounded-xl bg-stone-900 border border-stone-800 hover:border-blue-700 transition">
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center font-bold">
+              <div className="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center font-bold text-white">
                 GN
               </div>
 
@@ -178,9 +196,18 @@ export function CommunityFeed({
               I couldn't find the submission address for the team declaration.
             </p>
 
-            <div className="flex gap-6 mt-4 text-sm text-stone-500">
-              <span>❤️ 2 Likes</span>
-              <span>💬 1 Comment</span>
+            <div className="flex items-center justify-between mt-4 pt-4 border-t border-stone-800">
+              <button className="text-sm text-stone-400 hover:text-blue-400 transition">
+                ❤️ Like
+              </button>
+
+              <button className="text-sm text-stone-400 hover:text-blue-400 transition">
+                💬 Comment
+              </button>
+
+              <button className="text-sm text-stone-400 hover:text-blue-400 transition">
+                🔗 Share
+              </button>
             </div>
           </div>
 
@@ -237,7 +264,7 @@ export function CommunityFeed({
 
             <input
               type="text"
-              placeholder="What did I miss this week?"
+              placeholder="Ask anything from chats, calls or documents..."
               className="w-full bg-stone-950 border border-stone-700 rounded-lg px-3 py-2 text-sm text-white placeholder:text-stone-500 mb-3"
             />
 
@@ -247,6 +274,20 @@ export function CommunityFeed({
             >
               Ask PodMind
             </button>
+          </div>
+
+          <div className="p-5 rounded-xl bg-stone-900 border border-stone-800">
+            <h3 className="font-bold text-white mb-2">
+              About Nuity
+            </h3>
+
+            <p className="text-sm text-stone-400">
+              Continuity for UniPods Communities.
+            </p>
+
+            <p className="text-xs text-stone-500 mt-3">
+              Powered by PodMind AI • Preserve Knowledge • Discover Opportunities • Strengthen Collaboration
+            </p>
           </div>
 
         </div>
