@@ -15,7 +15,7 @@ export function CommunityFeed({
         </div>
 
         <h1 className="text-3xl font-black mb-4 text-white">
-          Three things since Monday
+          What You Missed This Week
         </h1>
 
         <ul className="space-y-2 text-stone-300 mb-5">
@@ -54,7 +54,7 @@ export function CommunityFeed({
 
             <div className="flex justify-end mt-3">
               <button className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold">
-                Post Update
+               Share Update
               </button>
             </div>
           </div>
@@ -83,7 +83,7 @@ export function CommunityFeed({
           </div>
 
           <h2 className="text-xl font-bold text-white">
-            Latest Discussions
+            Community Feed
           </h2>
 
           {/* Post 1 */}
