@@ -259,7 +259,7 @@ export function CommunityFeed({
             </h3>
 
             <p className="text-sm text-stone-400 mb-4">
-              Search across WhatsAPP Group chats, meetings, transcripts and institutional memory.
+              Search across WhatsApp chats, meetings, transcripts and institutional memory.
             </p>
 
             <input
