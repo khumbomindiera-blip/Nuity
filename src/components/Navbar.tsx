@@ -18,8 +18,7 @@ interface NavbarProps {
     | 'podmind'
     | 'pods'
     | 'synergies'
-    | 'audit'
-    | 'extract';
+    | 'audit';
 
   setActiveTab: (
     tab:
@@ -31,7 +30,6 @@ interface NavbarProps {
       | 'pods'
       | 'synergies'
       | 'audit'
-      | 'extract'
   ) => void;
 
   onOpenCreate: () => void;
@@ -71,7 +69,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
           </div>
 
-          {/* Desktop Navigation */}
+          {/* Navigation */}
           <nav className="hidden md:flex items-center gap-2">
 
             <button
@@ -126,15 +124,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Right Side */}
           <div className="flex items-center gap-3">
-
             <button
               onClick={onOpenCreate}
-              className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold flex items-center gap-2 transition"
+              className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold flex items-center gap-2"
             >
               <PlusCircle size={16} />
               Share Update
             </button>
-
           </div>
 
         </div>
