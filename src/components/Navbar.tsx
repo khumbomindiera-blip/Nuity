@@ -12,6 +12,8 @@ import {
 interface NavbarProps {
   activeTab:
     | 'feed'
+    | 'events'
+    | 'alerts'
     | 'vault'
     | 'podmind'
     | 'pods'
@@ -22,6 +24,8 @@ interface NavbarProps {
   setActiveTab: (
     tab:
       | 'feed'
+      | 'events'
+      | 'alerts'
       | 'vault'
       | 'podmind'
       | 'pods'
@@ -48,12 +52,10 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="sticky top-0 z-50 bg-slate-950 border-b border-slate-800 backdrop-blur">
       <div className="max-w-7xl mx-auto px-4">
-
         <div className="h-16 flex items-center justify-between">
 
           {/* Logo */}
           <div className="flex items-center gap-3">
-
             <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center font-black text-white">
               N
             </div>
@@ -67,11 +69,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                 UniPods Community Platform
               </p>
             </div>
-
           </div>
 
-          {/* Desktop Nav */}
-
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-2">
 
             <button
@@ -83,14 +83,16 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
 
             <button
-              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition"
+              onClick={() => setActiveTab('events')}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition ${tabStyle('events')}`}
             >
               <Calendar size={16} />
               Events
             </button>
 
             <button
-              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition"
+              onClick={() => setActiveTab('alerts')}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition ${tabStyle('alerts')}`}
             >
               <Bell size={16} />
               Alerts
@@ -123,21 +125,19 @@ export const Navbar: React.FC<NavbarProps> = ({
           </nav>
 
           {/* Right Side */}
-
           <div className="flex items-center gap-3">
 
             <button
               onClick={onOpenCreate}
-              className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold flex items-center gap-2"
+              className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold flex items-center gap-2 transition"
             >
               <PlusCircle size={16} />
-              New Post
+              Share Update
             </button>
 
           </div>
 
         </div>
-
       </div>
     </header>
   );
